@@ -1,0 +1,23 @@
+# Core Dependencies
+opencv-python>=4.8.0
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-image>=0.21.0
+tqdm>=4.65.0
+
+# Configuration
+pyyaml>=6.0
+
+# Optional: Web Interface
+streamlit>=1.28.0
+
+# Optional: Advanced ML (if implementing deep learning extensions)
+# torch>=2.0.0
+# torchvision>=0.15.0
+# tensorflow>=2.13.0
+
+# Development and Testing (optional)
+# pytest>=7.4.0
+# pytest-cov>=4.1.0
+# black>=23.7.0
+# flake8>=6.1.0

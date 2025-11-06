@@ -1,0 +1,78 @@
+# Configuration file for Defect Detection System
+# This file contains parameters for tuning the detection algorithm
+
+# General settings
+use_ensemble: true  # Use ensemble detection for higher accuracy
+visualization_mode: both  # Options: bbox, contour, both, heatmap
+
+# Preprocessing settings
+preprocessor:
+  target_size: null  # [width, height] or null for original size
+  # Example: [1024, 768]
+
+# Detector settings
+detector:
+  # Preprocessing
+  gaussian_kernel: 5
+  bilateral_d: 9
+  bilateral_sigma_color: 75
+  bilateral_sigma_space: 75
+
+  # Adaptive thresholding
+  adaptive_block_size: 11
+  adaptive_c: 2
+
+  # Edge detection (Canny)
+  canny_low: 50
+  canny_high: 150
+
+  # Morphological operations
+  morph_kernel_size: 3
+  close_iterations: 2
+  open_iterations: 1
+
+  # Contour filtering
+  min_defect_area: 10      # Minimum defect area in pixels
+  max_defect_area: 50000   # Maximum defect area in pixels
+
+  # Detection sensitivity (0.0 to 1.0)
+  edge_sensitivity: 0.7     # Higher = more sensitive to edges
+  texture_sensitivity: 0.6  # Higher = more sensitive to texture anomalies
+
+# Output settings
+output:
+  save_annotated: true
+  generate_reports: true
+  report_formats:
+    - csv
+    - json
+    - txt
+
+# Performance settings
+batch_processing:
+  parallel_workers: 4  # Number of parallel workers (not yet implemented)
+  batch_size: 10       # Images per batch (not yet implemented)
+
+# Advanced settings (for fine-tuning)
+advanced:
+  # These settings are for advanced users who want to fine-tune detection
+  # for specific types of defects or image characteristics
+
+  # Focus on specific defect types
+  enable_scratch_detection: true
+  enable_void_detection: true
+  enable_particle_detection: true
+  enable_edge_defect_detection: true
+  enable_texture_analysis: true
+
+  # Scratch detection tuning
+  scratch:
+    min_aspect_ratio: 2.0  # Minimum aspect ratio to classify as scratch
+
+  # Morphological tuning
+  tophat_kernel_size: 15
+  blackhat_kernel_size: 15
+
+  # Texture analysis tuning
+  texture_window_size: 21
+  texture_threshold_method: otsu  # Options: otsu, adaptive, fixed
