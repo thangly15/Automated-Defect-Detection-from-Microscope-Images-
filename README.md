@@ -5,6 +5,23 @@
 
 An advanced, automated defect detection system for microscope images of fabricated test coupons. This system replaces manual inspection with reliable, consistent algorithms capable of identifying, marking, and counting various types of defects with high accuracy.
 
+---
+
+## 🚀 New to Programming? Start Here!
+
+**Complete beginner?** We've got you covered!
+
+👉 **[Read the QUICK START Guide](QUICK_START.md)** 👈
+
+Or just run this super simple command:
+```bash
+python simple_detect.py
+```
+
+The code has been simplified with lots of comments explaining every step!
+
+---
+
 ## Overview
 
 This project provides a comprehensive solution for detecting defects in microscope images, including:
